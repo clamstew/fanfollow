@@ -74,5 +74,8 @@ pickle-email-*.html
 # vim artifacts
 **.swp
 
+# gemfile lock file
+*.lock
+
 # Ignore application configuration
 /config/application.yml

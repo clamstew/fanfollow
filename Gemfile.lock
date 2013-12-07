@@ -69,6 +69,7 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     hike (1.2.3)
+    hirb (0.7.1)
     hub (1.10.6)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -165,6 +166,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   figaro
+  hirb (~> 0.7.1)
   hub
   jbuilder (~> 1.2)
   jquery-rails

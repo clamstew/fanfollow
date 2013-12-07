@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
+gem "hirb", "~> 0.7.1"
 gem 'rails', '4.0.1'
 gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'

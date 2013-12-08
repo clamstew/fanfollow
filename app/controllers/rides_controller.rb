@@ -11,12 +11,12 @@ class RidesController < ApplicationController
   def new
       @ride = Ride.new(params[:ride_params])
       @event = Event.find(params[:event_id])
+      @user = current_user.id
+      @cars = Car.all
   end
 
   def create
-    @ride = Ride.new(params[:ride_params])
-    @ride.event = Event.find(params[:event_id])
-    @ride.user_id = current_user.id
+    @ride = Ride.new(ride_params)
     if @ride.save
       redirect_to @ride
     else
@@ -42,7 +42,7 @@ class RidesController < ApplicationController
 
   private
   def ride_params
-    params.require(:ride).permit(:user_id, :event_id)
+    params.require(:ride).permit(:car_id, :ride_name, :event_id)
   end
 
 end

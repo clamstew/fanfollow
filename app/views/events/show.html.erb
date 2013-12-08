@@ -7,7 +7,7 @@
 
 <h3>These rides are going to this event</h3>
   <ul>
-    <li><%= link_to ride.name, events_path %></li>
+    <li><%= link_to "ride_name", events_path %></li>
     <li><%= link_to "The Merry Pranksters", events_path %></li>
     <li><%= link_to "NSYNC Revival Tour with Amy!!!!", events_path %></li>
     <li><%= link_to "My van is way creepy in person...I promise", events_path %></li>
@@ -15,3 +15,6 @@
 
 
 <%= link_to "Edit Event", edit_event_path %> 
+
+<h3><%= link_to('Add a Ride', new_ride_path) %></h3>
+<%= link_to "Verify Project", new_verification_path(:project_id => @project.id ) %

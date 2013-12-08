@@ -16,7 +16,7 @@ class RidesController < ApplicationController
     @ride = Ride.new(ride_params)
     # If you want to store who created this ride, write @ride.user_id = current_user.id
     if @ride.save
-      redirect_to @event
+      redirect_to @ride
     else
       render 'new'
     end

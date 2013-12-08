@@ -1,0 +1,12 @@
+<h3>Would you like to reserve a seat in this car?</h3>
+  <%= form_for @passenger do |f| %>
+    <%= f.hidden_field :ride_id, :value => @selected_ride_id %>
+      <%= f.hidden_field :user_id, :value => @user.id %>
+    <br/>
+
+    <%= f.submit %>
+  <% end %>
+
+
+<h2>If not, click here to return to </h2>
+    

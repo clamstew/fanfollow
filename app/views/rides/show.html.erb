@@ -1,14 +1,9 @@
-<h1>The ride XXXXXXXX is going to XXXXXXXX Event!</h1>
+<h1>The ride <%= @ride.ride_name %> is going to XXXXXXXX!</h1>
+
+<p> <%= link_to 'Reserve a seat', events_path %> </p>
 
 
 
-
-<p><strong>Number of seats total: </strong>____</p>
-<p><strong>Seats available:</strong>____</p>
-<p><strong>Passengers:</strong></p>
-  <% @passengers.each do |passenger| %>
-    <%= link_to passenger.name, passenger %> 
-  <% end %>
 
 
 <!-- Add Button to Reserve Seat -->

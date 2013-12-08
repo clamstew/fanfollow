@@ -10,4 +10,5 @@ Fanfollow::Application.routes.draw do
   resources :events
   resources :cars
   resources :rides
+  resources :passengers
 end

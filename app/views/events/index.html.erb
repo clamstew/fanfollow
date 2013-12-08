@@ -1,10 +1,13 @@
-<h1>What the fluke Murph?!</h1>
+<h1>Events - What the fluke Murph?!</h1>
 <h3>Check out these crunchy events</h3>
-  <h4>
+  
     <% @events.each do |event| %>
-      <%= link_to event.name, event %>
+    <h4><%= link_to event.name, event %></h4>
+    <p><%= event.location %></p>
+    <p><%= event.date %></p>
+
     <% end %>
-  </h4>
+  
 
 
   <h1><%= link_to('Create Event', new_event_path) %></h1>

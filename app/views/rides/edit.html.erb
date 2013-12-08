@@ -1,0 +1,7 @@
+<h1>Edit your ride</h1>
+<%= render "form" %>
+
+<%= link_to 'Destroy', post_comment_path(@post, comment),
+            :confirm => 'Are you sure?', :method => :delete %>
+
+<!-- This needs to only be accessible by the creator or the admin -->

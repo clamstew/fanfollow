@@ -7,4 +7,7 @@ Fanfollow::Application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to:'sessions#destroy'
   
+  resources :events
+  resources :cars
+  resources :rides
 end

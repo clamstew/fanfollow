@@ -2,3 +2,9 @@
 <% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
 <% end %>
+
+
+<% @events.each do |event| %>
+<!--   <h3><%= link_to "Events", event %></h3> -->
+  <p><%= link_to event.name, event %></p>
+<% end %>

@@ -5,3 +5,9 @@
       <%= link_to event.name, event %>
     <% end %>
   </h4>
+
+  <%= link_to('Create Event', new_event_path) %>
+
+  <!-- If you want to check if they are a user first, use: -->
+  <!-- add current_user? -->
+  <!-- see https://github.com/plataformatec/devise for doc. -->

@@ -2,26 +2,20 @@
     <%= stylesheet_link_tag "polaroid.css" %>
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-<h1>
-  <%= @event.name %><br>
-  <%= @event.description %><br>
-  <%= @event.location %><br>
-  <%= @event.date %>
-</h1>
+<br/><br/>
 
+<h1>View Event</h1>
 
 <!-- Polaroid gallery -->
 <div class="row">
   <div class="large-08 columns" style="overflow: visible">
     <ul class="polaroids large-block-grid-4 small-block-grid-2"> 
       <h4>
-          <% @events.each do |event| %>
             <li>
-              <a href="/events/<%= event.id %>" title="<%= event.name %>">
-              <img alt="<%= event.name %>" src="<%= event.image_id %>" /> 
+              <a href="/events/<%= @event.id %>" title="<%= @event.name %>" location=", <%= @event.location %>">
+              <img alt="<%= @event.name %>" src="<%= @event.image_id %>" /> 
               </a>
             </li>
-          <% end %>        
       </h4>
     </ul>
   </div>
@@ -39,6 +33,11 @@
     <li><%= link_to "My van is way creepy in person...I promise", events_path %></li>
   </ul>
 
+<a href="#" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-headphones"></span> Edit Event</a>
+
+<em><strong> Or  </em></strong>
+
+<a href="#" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-road"></span> Add A Ride</a>
 
 <%= link_to "Edit Event", edit_event_path %> 
 

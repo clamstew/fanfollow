@@ -15,7 +15,10 @@
       } 
     }
     ul.polaroids img { display: block; width: 190px; margin-bottom: 12px; }
-    ul.polaroids a:after { content: attr(title); }
+    ul.polaroids a:after { 
+      content: attr(title) attr(location);
+       }
+
     
     ul.polaroids li:nth-child(even) a { -webkit-transform: rotate(2deg);  -moz-transform: rotate(2deg); }
     ul.polaroids li:nth-child(3n) a { -webkit-transform: none; position: relative; top: -5px;  -moz-transform: none; }

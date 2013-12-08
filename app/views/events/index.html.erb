@@ -11,6 +11,24 @@
 
 
 
+<!-- Polaroid gallery -->
+<div class="row">
+  <div class="large-4 columns" style="overflow: visible">
+    <ul class="polaroids large-block-grid-4 small-block-grid-2"> 
+      <h4>
+          <% @events.each do |event| %>
+            <li>
+              <a href="/events/<%= event.id %>" title="<%= event.name %>">
+              <img alt="<%= event.name %>" src="<%= event.image_id %>" /> 
+              </a>
+            </li>
+          <% end %>        
+      </h4>
+    </ul>
+  </div>
+</div>
+<!-- /Polaroid gallery -->
+
 
   <!-- If you want to check if they are a user first, use: -->
   <!-- add current_user? -->

@@ -9,14 +9,13 @@ class PassengersController < ApplicationController
   end
 
   def new
-      @passenger = Ride.new(params[:passenger_params])
-      @ride = Ride.find(params[:passenger_id])
+      @passenger = Passenger.new
+      @ride = Ride.find(params[:ride_id])
       @user = current_user.id
-      @passengers = Passenger.all
   end
 
   def create
-    @passenger = Passenger.new(ride_params)
+    @passenger = Passenger.new(passenger_params)
     if @passenger.save
       redirect_to @passenger
     else

@@ -1,21 +1,24 @@
 <h1>
   <%= @event.name %><br>
-  <%= @event.description %><br>
-  <%= @event.location %><br>
-  <%= @event.date %>
 </h1>
+<h3>
+  <%= @event.description %><br/><br/>
+  <center><%= @event.location %><br/><br/></center>
+</h3>
 
-<h3>These rides are going to this event</h3>
-  <ul>
-    <% Ride.all %>
-    <li><%= link_to "ride_name", events_path %></li>
-    <li><%= link_to "The Merry Pranksters", events_path %></li>
-    <li><%= link_to "NSYNC Revival Tour with Amy!!!!", events_path %></li>
-    <li><%= link_to "My van is way creepy in person...I promise", events_path %></li>
-  </ul>
 
+
+
+<center><h3><u>Start trippin, dudes!</u></h3>
+ <% @rides.each do |ride| %>
+    <% if ride.event_id == @event.id %>
+      <%= link_to ride.ride_name, ride_path %>
+      <br/>
+    <% end %>
+  <% end %>
 
 <%= link_to "Edit Event", edit_event_path %> 
 
 <h3><%= link_to 'Add a Ride', new_ride_path(:event_id => @event.id) %></h3>
+</center>
 

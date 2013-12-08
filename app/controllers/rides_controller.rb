@@ -2,6 +2,8 @@ class RidesController < ApplicationController
 
   def show
     @ride = Ride.find(params[:id])
+    @event = Event.all
+    @passengers = Passenger.all
   end
 
   def index

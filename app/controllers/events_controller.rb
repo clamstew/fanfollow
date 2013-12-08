@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @ride = Event.find(params[:id])
+    @rides = Ride.all
   end
 
   def index

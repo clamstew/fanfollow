@@ -14,7 +14,7 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-    @car.user_id = current_user.id
+    # @car.user_id = current_user.id  <-- Fix in order to add user_id's to cars
     if @car.save
       redirect_to @car
     else
@@ -23,7 +23,7 @@ class CarsController < ApplicationController
   end
 
   def edit
-    @car = car.find(params[:id])
+    @car = Car.find(params[:id])
   end
 
   def update

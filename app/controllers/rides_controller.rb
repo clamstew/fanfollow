@@ -40,7 +40,7 @@ class RidesController < ApplicationController
 
   private
   def ride_params
-    params.require(:ride).permit(:name, :description, :image_id, :date, :location)
+    params.require(:ride).permit(:user_id, :event_id)
   end
 
 end

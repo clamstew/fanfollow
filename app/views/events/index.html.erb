@@ -1,0 +1,7 @@
+<h1>What the fluke Murph?!</h1>
+<h3>Check out these crunchy events</h3>
+  <h4>
+    <% @events.each do |event| %>
+      <%= link_to event.name, event %>
+    <% end %>
+  </h4>

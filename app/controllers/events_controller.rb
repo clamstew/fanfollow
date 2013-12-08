@@ -27,8 +27,8 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Video.find(params[:id])
-    @video.update(video_params)
+    @event = Event.find(params[:id])
+    @event.update(event_params)
     redirect_to root_path
   end
 

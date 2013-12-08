@@ -7,11 +7,11 @@
 
 <h3>These rides are going to this event</h3>
   <ul>
-    <li><%= link_to "ride_name", events_path %></li>
+    <li><%= link_to ride.name, events_path %></li>
     <li><%= link_to "The Merry Pranksters", events_path %></li>
     <li><%= link_to "NSYNC Revival Tour with Amy!!!!", events_path %></li>
     <li><%= link_to "My van is way creepy in person...I promise", events_path %></li>
   </ul>
 
 
-<%= button_tag "Edit Event"%> 
+<%= link_to "Edit Event", edit_event_path %> 

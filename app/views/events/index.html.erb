@@ -1,8 +1,11 @@
-<h1>What the fluke Murph?!</h1>
+<h1>Events - What the fluke Murph?!</h1>
 <h3>Check out these crunchy events</h3>
   
     <% @events.each do |event| %>
-    <p><%= link_to event.name, event %></p>
+    <h4><%= link_to event.name, event %></h4>
+    <p><%= event.location %></p>
+    <p><%= event.date %></p>
+
     <% end %>
   
 

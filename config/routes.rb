@@ -8,5 +8,6 @@ Fanfollow::Application.routes.draw do
   get 'logout', to:'sessions#destroy'
   
   resources :events
+  resources :cars
 
 end

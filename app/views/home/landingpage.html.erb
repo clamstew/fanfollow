@@ -13,7 +13,9 @@
  -->
     <!-- Add custom CSS here -->
     <%= stylesheet_link_tag "stylish-portfolio.css" %>
+    <%= stylesheet_link_tag "polaroid.css" %>
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -32,6 +34,8 @@
       </ul>
     </div>
     <!-- /Side Menu -->
+
+    
   
     <!-- Full Page Image Header Area -->
     <div id="top" class="header">
@@ -68,6 +72,25 @@
     </div>
     <!-- /Intro -->
   
+<!-- Polaroid gallery -->
+<div class="row">
+  <div class="large-12 columns" style="overflow: visible">
+    <ul class="polaroids large-block-grid-4 small-block-grid-2"> 
+      <h4>
+          <% @events.each do |event| %>
+            <li>
+              <a href="/events/<%= event.id %>" title="<%= event.name %>">
+              <img alt="<%= event.name %>" src="<%= event.image_id %>" /> 
+              </a>
+            </li>
+          <% end %>        
+      </h4>
+    </ul>
+  </div>
+</div>
+<!-- /Polaroid gallery -->
+
+
     <!-- Services -->
     <div id="services" class="services">
       <div class="container">

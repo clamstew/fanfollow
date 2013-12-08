@@ -9,12 +9,14 @@ class RidesController < ApplicationController
   end
 
   def new
-    @ride = Ride.new
+      @ride = Ride.new(params[:ride_params])
+      @event = Event.find(params[:event_id])
   end
 
   def create
-    @ride = Ride.new(ride_params)
-    # If you want to store who created this ride, write @ride.user_id = current_user.id
+    @ride = Ride.new(params[:ride_params])
+    @ride.event = Event.find(params[:event_id])
+    @ride.user_id = current_user.id
     if @ride.save
       redirect_to @ride
     else

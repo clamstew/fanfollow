@@ -1,28 +1,22 @@
-<!-- How do we tie the event_id to this? Is it a param from the url? See Controller -->
-
-
-  <!-- Collect event_id -->
-  <p>Select your event: </p>
+  <h3><%= "Create a ride for " + @event.name %></h3>
       
-      <%= @event_id = Event.find(:id) %>
+      
 
     
 
   <!-- Collect car_id -->
-if user has a car
-    would you like to use this car or would you like to add a new car?
+<p>If you have an existing car on Fan Follow that you would like to use, select it below. If not click "Add a New Car" for this ride.</p>
       Use Car XXXXXXX
     or
-      Create a new car
+      <%= link_to "Create a new car", 
 
-  
+
   <!-- User add these fields -->
 <%= form_for @ride do |f| %>
   <%= f.label :ride_name %>
-  <%= f.text_field :name %><br />
-  
-  <%= f.label :number_of_seats %>
-  <%= f.text_field :seats %><br />
-  
+  <%= f.hidden_field :event_id, :value => @event.id %>
+
   <%= f.submit %>
 <% end %>
+
+  

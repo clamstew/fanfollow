@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20131207234132) do
     t.datetime "updated_at"
     t.string   "name"
     t.integer  "age"
+    t.boolean  "admin"
     t.string   "provider"
     t.string   "uid"
     t.string   "image"

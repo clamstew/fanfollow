@@ -1,0 +1,8 @@
+<h1>This ride is going to XXXXXXXX Event!</h1>
+
+<p><strong>Number of seats total: </strong>____</p>
+<p><strong>Seats available:</strong>____</p>
+<p><strong>Passengers:</strong></p>
+  <% @passengers.each do |passenger| %>
+    <%= link_to passenger.name, passenger %> 
+  <% end %>

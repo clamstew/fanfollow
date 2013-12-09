@@ -1,0 +1,8 @@
+class AddColumnsToEvents < ActiveRecord::Migration
+  def change
+    add_column :events, :description, :string
+    add_column :events, :image_id, :string
+    add_column :events, :date, :datetime
+    add_column :events, :location, :string
+  end
+end

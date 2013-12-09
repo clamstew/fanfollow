@@ -1,0 +1,33 @@
+<h3><%= "Create a car " %></h3>
+
+<%= form_for @car do |f| %>
+  <%= f.label :car_name %>
+  <%= f.text_field :name %><br />
+  
+  <%= f.label :number_of_seats %>
+  <%= f.text_field :seats %><br />
+  <%= f.hidden_field :user_id, :value => @event.id %>
+
+  <%= f.submit %>
+<% end %>
+
+
+
+
+<h3><%= "Create a ride for " + @event.name %></h3>
+      
+      
+<p>Want to use an existing car on Fan Follow? Select it below.</p><br>
+
+
+<p>If not click "Add a New Car" for this ride.</p>
+    <%= link_to "Create a new car", new_car_path %>
+
+
+<%= form_for @ride do |f| %>
+  <%= f.label :ride_name %>
+  <%= f.hidden_field :event_id, :value => @event.id %>
+
+  <%= f.submit %>
+<% end %>
+

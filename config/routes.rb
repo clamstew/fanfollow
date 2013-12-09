@@ -1,5 +1,5 @@
 Fanfollow::Application.routes.draw do
-  root :to => "home#index"
+  root :to => "home#landingpage"
   devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users
 
@@ -7,4 +7,8 @@ Fanfollow::Application.routes.draw do
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to:'sessions#destroy'
   
+  resources :events
+  resources :cars
+  resources :rides
+  resources :passengers
 end

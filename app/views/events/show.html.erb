@@ -1,0 +1,57 @@
+
+<h1>
+  <%= @event.name %><br>
+</h1>
+<h3>
+  <%= @event.description %><br/><br/>
+  <center><%= @event.location %><br/><br/></center>
+</h3>
+
+<%= stylesheet_link_tag "stylish-portfolio.css" %>
+    <%= stylesheet_link_tag "polaroid.css" %>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+<br/><br/>
+
+<h1>View Event</h1>
+
+<!-- Polaroid gallery -->
+<div class="row">
+  <div class="large-08 columns" style="overflow: visible">
+    <ul class="polaroids large-block-grid-4 small-block-grid-2"> 
+      <h4>
+            <li>
+              <a href="/events/<%= @event.id %>" title="<%= @event.name %>" location=", <%= @event.location %>">
+              <img alt="<%= @event.name %>" src="<%= @event.image_id %>" /> 
+              </a>
+            </li>
+      </h4>
+    </ul>
+  </div>
+</div>
+<!-- /Polaroid gallery -->
+
+
+
+
+
+<a href="#" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-headphones"></span> Edit Event</a>
+
+<em><strong> Or  </em></strong>
+
+<a href="#" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-road"></span> Add A Ride</a>
+
+
+<center><h3><u>Start trippin, dudes!</u></h3>
+ <% @rides.each do |ride| %>
+    <% if ride.event_id == @event.id %>
+      <%= link_to ride.ride_name, ride_path %>
+      <br/>
+    <% end %>
+  <% end %>
+
+<%= link_to "Edit Event", edit_event_path %> 
+
+<h3><%= link_to 'Add a Ride', new_ride_path(:event_id => @event.id) %></h3>
+</center>
+

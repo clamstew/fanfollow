@@ -1,0 +1,31 @@
+  <h3><%= "Create a ride for " + @event.name %></h3>
+      
+
+<p>Want to use an existing car on Fan Follow? Select it below.</p><br>
+
+  <% @cars.each do |car| %>
+    <% if car.user_id == @user %>
+      <%= car.name %>
+      <br/>
+    <% end %>
+  <% end %>
+
+<p>If not click "Add a New Car" for this ride.
+</p>
+    <%= link_to "Create a new car", new_car_path %>
+
+
+<% @selected_car_id = 1 %>
+
+
+<%= form_for @ride do |f| %>
+  <%= f.label :name_your_ride %>
+  <%= f.text_field :ride_name %>
+  <br/>
+  
+  <%= f.hidden_field :car_id, :value => @selected_car_id %>
+    <%= f.hidden_field :event_id, :value => @event.id %>
+  <br/>
+  <%= f.submit %>
+<% end %>
+  

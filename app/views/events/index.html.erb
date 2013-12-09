@@ -1,0 +1,31 @@
+   <%= stylesheet_link_tag "polaroid.css" %>
+
+<center><h1>Events - What the fluke Murph?!</h1>
+<h3>Check out these crunchy events</h3></center>
+  
+<!-- Polaroid gallery -->
+<div class="row">
+  <div class="large-08 columns" style="overflow: visible">
+    <ul class="polaroids large-block-grid-4 small-block-grid-2"> 
+      <h4>
+          <% @events.each do |event| %>
+            <li>
+              <a href="/events/<%= event.id %>" title="<%= event.name %>" location=", <%= event.location %>">
+              <img alt="<%= event.name %>" src="<%= event.image_id %>" /> 
+              </a>
+            </li>
+          <% end %>        
+      </h4>
+    </ul>
+  </div>
+</div>
+<!-- /Polaroid gallery -->
+
+  
+  <center><a href="/events/new" class="btn btn-primary btn-lg"><i class="icon-white icon-road"></i> Create Event</a></center>
+  
+
+
+  <!-- If you want to check if they are a user first, use: -->
+  <!-- add current_user? -->
+  <!-- see https://github.com/plataformatec/devise for doc. -->

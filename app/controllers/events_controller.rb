@@ -5,6 +5,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @ride = Event.find(params[:id])
     @rides = Ride.all
+    @current_user = current_user
   end
 
   def index

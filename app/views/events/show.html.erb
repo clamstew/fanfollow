@@ -19,10 +19,27 @@
 
 <!-- <em><strong> Or  </em></strong> -->
 
-<a href="#" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-road"></span> <h2>Add A Ride</h2></a>
 
-<a href="#" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-headphones"></span><h2>Edit Event</h2></a>
+
+<% edit_event_button = '<div class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-headphones"></span><h2>Edit event</h2></div>'.html_safe %>
+
+<% add_ride_button = '<div class="btn btn-primary btn-success"><span class="glyphicon glyphicon-road"></span><h2>Add a ride</h2></div>'.html_safe %>
+
+
+    <%=
+     link_to_if(@current_user.nil?, add_ride_button, { controller: "devise/sessions", action: "create"}) do
+       link_to(add_ride_button, { controller: "rides", action: "new", event_id: @event.id })
+     end
+  %>
+
+  <%=
+     link_to_if(@current_user.nil?, edit_event_button, { controller: "devise/sessions", action: "create"}) do
+       link_to(edit_event_button, { controller: "events", action: "edit", event_id: @event.id })
+     end
+  %>
 </center>
+
+
 <% ride_count = 0 %>
 <center><h2>Or join a ride:</h2>
  <% @rides.each do |ride| %><h3>
@@ -40,11 +57,5 @@
 
 </center>
 
-
-
-<h3><%= link_to 'Add a Ride', new_ride_path(:event_id => @event.id) %></h3>
-<br/>
-<h4>
-<%= link_to "Edit Event", edit_event_path %> </h4>
 </center>
 </center>

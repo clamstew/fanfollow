@@ -1,11 +1,12 @@
-
+<center>
 <h1>
   <%= @event.name %><br>
 </h1>
-<h3>
-  <%= @event.description %><br/><br/>
-  <center><%= @event.location %><br/><br/></center>
-</h3>
+<h4>
+  <%= @event.description %><br/>
+  <center> <%= @event.location %><br/><br/></center>
+</h4>
+ <img alt="<%= @event.name %>" src="<%= @event.image_id %>"  height="500" width="500"/> 
 
 <%= stylesheet_link_tag "stylish-portfolio.css" %>
     <%= stylesheet_link_tag "polaroid.css" %>
@@ -13,45 +14,37 @@
 
 <br/><br/>
 
-<h1>View Event</h1>
-
-<!-- Polaroid gallery -->
-<div class="row">
-  <div class="large-08 columns" style="overflow: visible">
-    <ul class="polaroids large-block-grid-4 small-block-grid-2"> 
-      <h4>
-            <li>
-              <a href="/events/<%= @event.id %>" title="<%= @event.name %>" location=", <%= @event.location %>">
-              <img alt="<%= @event.name %>" src="<%= @event.image_id %>" /> 
-              </a>
-            </li>
-      </h4>
-    </ul>
-  </div>
-</div>
-<!-- /Polaroid gallery -->
+<center>
 
 
+<!-- <em><strong> Or  </em></strong> -->
 
+<a href="#" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-road"></span> <h2>Add A Ride</h2></a>
 
-
-<a href="#" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-headphones"></span> Edit Event</a>
-
-<em><strong> Or  </em></strong>
-
-<a href="#" class="btn btn-primary btn-success"><span class="glyphicon glyphicon-road"></span> Add A Ride</a>
-
-
-<center><h3><u>Start trippin, dudes!</u></h3>
- <% @rides.each do |ride| %>
+<a href="#" class="btn btn-primary btn-warning"><span class="glyphicon glyphicon-headphones"></span><h2>Edit Event</h2></a>
+</center>
+<% ride_count = 0 %>
+<center><h2>Or join a ride:</h2>
+ <% @rides.each do |ride| %><h3>
     <% if ride.event_id == @event.id %>
-      <%= link_to ride.ride_name, ride_path %>
-      <br/>
+      <% ride_count = ride_count + 1 %>
+      <%= ride_count %>.
+      <%= link_to ride.ride_name, ride_path(ride) %>
+      <br/></h3>
     <% end %>
   <% end %>
 
-<%= link_to "Edit Event", edit_event_path %> 
+  <center>
 
-<h3><%= link_to 'Add a Ride', new_ride_path(:event_id => @event.id) %></h3>
+<br/>
+
 </center>
 
+
+
+<h3><%= link_to 'Add a Ride', new_ride_path(:event_id => @event.id) %></h3>
+<br/>
+<h4>
+<%= link_to "Edit Event", edit_event_path %> </h4>
+</center>
+</center>

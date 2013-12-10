@@ -1,12 +1,14 @@
-<h3>Let's get you a seat!</h3>
+<center><h3>Let's get you a seat!</h3>
   <%= form_for @passenger do |f| %>
     <%= f.hidden_field :ride_id, :value => @ride.id %>
       <%= f.hidden_field :user_id, :value => @user %>
     <br/>
 
+
+
     <%= f.submit %>
   <% end %>
 
+</center>
 
-<h2>If not, click here to return to your the rides page.</h2>
     

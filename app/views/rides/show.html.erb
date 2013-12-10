@@ -1,7 +1,7 @@
 <h1>The ride <%= @ride.ride_name %> is going to <%= @event.find(@ride.event_id).name %></h1>
-<h3> The folks have seats: </h3>
+<center><h3> The folks have seats: </h3>
   
-  
+  <h3>
   <% @passengers.each do |passenger| %>
     <% if passenger.ride_id == @ride.id %>
       <%= User.find_by(passenger.user_id).name %>
@@ -9,11 +9,15 @@
     <% end %>
   <% end %>
 
+</h3>
+
 <br/>
 
 
+<h2><b>It's not a party without you! Join us:</b>
 <p> <%= link_to 'Reserve a seat', new_passenger_path(:ride_id => @ride.id) %> </p>
-
+</h2>
+</center>
 
 
 

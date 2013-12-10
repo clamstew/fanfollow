@@ -1,7 +1,24 @@
   <h3><%= "Create a ride for " + @event.name %></h3>
       
 
-<p>Want to use an existing car on Fan Follow? Select it below.</p><br>
+
+<!-- Polaroid gallery -->
+<div class="row">
+  <div class="large-08 columns" style="overflow: visible">
+    <ul class="polaroids large-block-grid-4 small-block-grid-2"> 
+      <h4>
+            
+              <a href="/events/<%= @event.id %>" title="<%= @event.name %>" location=", <%= @event.location %>">
+              <img alt="<%= @event.name %>" src="<%= @event.image_id %>" height="500" width="500"/> 
+              </a>
+            
+      </h4>
+    </ul>
+  </div>
+</div>
+<!-- /Polaroid gallery -->
+<center>
+<!-- <p>Here's your car:</p><br>
 
   <% @cars.each do |car| %>
     <% if car.user_id == @user %>
@@ -13,7 +30,7 @@
 <p>If not click "Add a New Car" for this ride.
 </p>
     <%= link_to "Create a new car", new_car_path %>
-
+ -->
 
 <% @selected_car_id = 1 %>
 
